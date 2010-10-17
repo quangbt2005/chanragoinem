@@ -1,0 +1,8 @@
+body{margin: 0px auto;padding: auto;}
+div{margin: 0px auto;text-align: center;padding: auto;background-color: transparent;}
+
+#allleft{float: left;width: 200px;margin: 5 0 5 0; background-color: yellow; height: 1100px}
+#allright{float: left;width: 800px;margin: 5 0 5 5; background-color: cyan; height: 1100px}
+#cat_detail{height: 150px; background-color: blue;}
+#product_list{height: 300px; background-color: red;}
+#product_detail{height: 300px; background-color: green;}
