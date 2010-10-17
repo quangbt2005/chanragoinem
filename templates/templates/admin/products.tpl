@@ -23,7 +23,7 @@
 <script languge="javascript">
 function change_product_detail(product_id)
 {
-  // window.parent.document.getElementById('iframe_delete_product').src='/quanly/category_detail.php?cat_id=' + category_id;
+  window.parent.document.getElementById('iframe4').src='/quanly/product_detail.php?product_id=' + product_id;
 }
 function delete_product(product_id)
 {
