@@ -10,6 +10,7 @@ define( 'TEMPLATES_C_PATH',           SYS_ROOT . 'templates/compile/' );
 define( 'SMARTY_CACHE',               SYS_ROOT . 'templates/cache/' );
 define( 'SMARTY_CONFIG',              SYS_ROOT . 'templates/configs/' );
 define( 'LIB_PATH',                   SYS_ROOT . 'libs/' );
+define( 'UPLOADS',                    SYS_ROOT . 'uploads/' );
 
 define( 'IMAGES_PATH',                WEB_ROOT . 'images/' );
 define( 'JSCRIPTS_PATH',              WEB_ROOT . 'javascripts/' );

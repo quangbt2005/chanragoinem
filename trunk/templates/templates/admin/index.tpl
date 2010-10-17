@@ -18,7 +18,9 @@
     <div id="product_list">
       <iframe name="iframe3" id='iframe3' src="" frameborder="0"></iframe>
     </div>
-    <div id="product_detail"></div>
+    <div id="product_detail">
+      <iframe name="iframe4" id='iframe4' src="" frameborder="0"></iframe>
+    </div>
   </div>
 </div>
 </body>
