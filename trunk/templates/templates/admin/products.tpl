@@ -8,7 +8,7 @@
   <script type="text/javascript" src="/javascripts/jquery-1.4.2.js"></script>
 </head>
 <body>
-  <table>
+  <table cellpadding="0" cellspacing="0" width="100%">
     {foreach from=$product_list item=product key=key}
     <tr>
       <td>{math equation="x + y" x=$key y=1}</td>

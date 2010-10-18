@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-10-17 09:41:41
+<?php /* Smarty version 2.6.26, created on 2010-10-18 06:30:27
          compiled from admin/category_detail.tpl */ ?>
 <?php echo '<?xml'; ?>
  version="1.0" encoding="UTF-8"<?php echo '?>'; ?>
@@ -12,7 +12,7 @@
 </head>
 <body>
   <form method="post">
-  <table>
+  <table cellpadding="0" cellspacing="0" width="100%">
     <tr><th>Ten Danh Muc</th><td><input type="text" value="<?php echo $this->_tpl_vars['cat']['category_name']; ?>
 " name="cat_name"></td></tr>
     <tr><th>Danh Muc Cha</th><td><select name="cat_parent">

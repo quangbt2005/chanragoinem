@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-10-17 09:41:41
+<?php /* Smarty version 2.6.26, created on 2010-10-18 06:30:27
          compiled from admin/categories.tpl */ ?>
 <?php echo '<?xml'; ?>
  version="1.0" encoding="UTF-8"<?php echo '?>'; ?>
@@ -11,7 +11,7 @@
   <link rel="StyleSheet" href="/style/admin.css" type="text/css" />
 </head>
 <body>
-  <table>
+  <table cellpadding="0" cellspacing="0" width="100%">
     <?php $_from = $this->_tpl_vars['cat_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['cat']):
 ?>

@@ -8,26 +8,32 @@
 </head>
 <body>
   <form method="post" enctype="multipart/form-data">
-  <table>
-    <tr><th>Ten San Pham</th><td><input type="text" value="{$product.product_name}" name="product_name"></td></tr>
-    <tr><th>Chi Tiet San Pham</th><td><input type="text" value="{$product.product_description}" name="product_description"></td></tr>
-    <tr><th>Danh Muc</th><td><select name="product_category">
-          <option value="">---------------</option>
-          {foreach from=$cat_list item=pcat}
-          <option value="{$pcat.id}" {if $pcat.id==$product.product_category}selected="selected"{/if}>{$pcat.category_name}</option>
-          {/foreach}
-        </select></td></tr>
-    <tr><th>Hinh San Pham</th><td><input type="file" name="product_image"></td></tr>
-    <tr><th>Gia San Pham</th><td><input type="text" name="product_price" value="{$product.product_price}"></td></tr>
-    <tr><td colspan="2"><input type="button" value="Them" onclick="goto_product_add();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="submit" value="Sua"></td></tr>
-  </table><input type="hidden" value="{$product.id}" name="product_id">
+  <table cellpadding="0" cellspacing="0" width="100%"><tr>
+    <td>
+	  <table cellpadding="0" cellspacing="0" width="100%">
+	    <tr><th>Ten San Pham</th><td><input type="text" value="{$product.product_name}" name="product_name"></td></tr>
+	    <tr><th>Danh Muc</th><td><select name="product_category">
+	          <option value="">---------------</option>
+	          {foreach from=$cat_list item=pcat}
+	          <option value="{$pcat.id}" {if $pcat.id==$product.product_category}selected="selected"{/if}>{$pcat.category_name}</option>
+	          {/foreach}
+	        </select></td>
+	    </tr>
+	    <tr><th>Gia San Pham</th><td><input type="text" name="product_price" value="{$product.product_price}"></td></tr>
+	    <tr><th>Chi Tiet San Pham</th><td><textarea name="product_description" cols="40" rows="6">{$product.product_description}</textarea></td></tr>
+	    <tr><th>Hinh San Pham</th><td><input type="file" name="product_image"></td></tr>
+	    <tr><td colspan="2"><input type="button" value="Them" onclick="goto_product_add();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="submit" value="Sua"></td></tr>
+	  </table><input type="hidden" value="{$product.id}" name="product_id">
+	</td>
+	<td valign="top" width="280"><img src="/product_thumb.php?f={$product.product_image}&w=200&h=auto" width="250" hspace="0" vspace="0" border="0"></td>
+	</tr></table>
   </form>
 </body>
 {literal}
 <script language="JavaScript" type="text/javascript">
 function goto_product_add()
 {
-  window.parent.document.getElementById('iframe2').src='/quanly/product_add.php';
+  window.parent.document.getElementById('iframe4').src='/quanly/product_add.php';
 }
 </script>
 
