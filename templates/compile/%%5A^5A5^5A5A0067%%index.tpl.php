@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-10-17 09:41:40
+<?php /* Smarty version 2.6.26, created on 2010-10-18 04:10:30
          compiled from admin/index.tpl */ ?>
 <?php echo '<?xml'; ?>
  version="1.0" encoding="UTF-8"<?php echo '?>'; ?>
@@ -22,7 +22,9 @@
     <div id="product_list">
       <iframe name="iframe3" id='iframe3' src="" frameborder="0"></iframe>
     </div>
-    <div id="product_detail"></div>
+    <div id="product_detail">
+      <iframe name="iframe4" id='iframe4' src="" frameborder="0" width="100%"></iframe>
+    </div>
   </div>
 </div>
 </body>

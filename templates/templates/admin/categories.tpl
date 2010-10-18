@@ -7,7 +7,7 @@
   <link rel="StyleSheet" href="/style/admin.css" type="text/css" />
 </head>
 <body>
-  <table>
+  <table cellpadding="0" cellspacing="0" width="100%">
     {foreach from=$cat_list item=cat}
     <tr><td><a href="javascript:change_category_detail({$cat.id});" onclick="">{$cat.category_name}</a></td></tr>
     {/foreach}

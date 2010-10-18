@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-10-17 10:14:28
+<?php /* Smarty version 2.6.26, created on 2010-10-18 06:30:29
          compiled from admin/products.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'math', 'admin/products.tpl', 16, false),array('function', 'number_format', 'admin/products.tpl', 18, false),)), $this); ?>
@@ -14,7 +14,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'math', 'adm
   <script type="text/javascript" src="/javascripts/jquery-1.4.2.js"></script>
 </head>
 <body>
-  <table>
+  <table cellpadding="0" cellspacing="0" width="100%">
     <?php $_from = $this->_tpl_vars['product_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['product']):
 ?>
@@ -36,7 +36,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'math', 'adm
 <script languge="javascript">
 function change_product_detail(product_id)
 {
-  // window.parent.document.getElementById(\'iframe_delete_product\').src=\'/quanly/category_detail.php?cat_id=\' + category_id;
+  window.parent.document.getElementById(\'iframe4\').src=\'/quanly/product_detail.php?product_id=\' + product_id;
 }
 function delete_product(product_id)
 {

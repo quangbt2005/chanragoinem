@@ -19,7 +19,7 @@
       <iframe name="iframe3" id='iframe3' src="" frameborder="0"></iframe>
     </div>
     <div id="product_detail">
-      <iframe name="iframe4" id='iframe4' src="" frameborder="0"></iframe>
+      <iframe name="iframe4" id='iframe4' src="" frameborder="0" width="100%"></iframe>
     </div>
   </div>
 </div>

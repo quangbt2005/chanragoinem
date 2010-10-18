@@ -8,7 +8,7 @@
 </head>
 <body>
   <form method="post">
-  <table>
+  <table cellpadding="0" cellspacing="0" width="100%">
     <tr><th>Ten Danh Muc</th><td><input type="text" value="{$cat.category_name}" name="cat_name"></td></tr>
     <tr><th>Danh Muc Cha</th><td><select name="cat_parent">
           <option value="">---------------</option>
