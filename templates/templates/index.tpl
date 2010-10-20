@@ -1,81 +1,22 @@
-{config_load file=test.conf section="setup"}
-{include file="header.tpl" title=foo}
-
-<PRE>
-
-{* bold and title are read from the config file *}
-{if #bold#}<b>{/if}
-{* capitalize the first letters of each word of the title *}
-Title: {#title#|capitalize}
-{if #bold#}</b>{/if}
-
-The current date and time is {$smarty.now|date_format:"%Y-%m-%d %H:%M:%S"}
-
-The value of global assigned variable $SCRIPT_NAME is {$SCRIPT_NAME}
-
-Example of accessing server environment variable SERVER_NAME: {$smarty.server.SERVER_NAME}
-
-The value of {ldelim}$Name{rdelim} is <b>{$Name}</b>
-
-variable modifier example of {ldelim}$Name|upper{rdelim}
-
-<b>{$Name|upper}</b>
-
-
-An example of a section loop:
-
-{section name=outer loop=$FirstName}
-{if $smarty.section.outer.index is odd by 2}
-	{$smarty.section.outer.rownum} . {$FirstName[outer]} {$LastName[outer]}
-{else}
-	{$smarty.section.outer.rownum} * {$FirstName[outer]} {$LastName[outer]}
-{/if}
-{sectionelse}
-	none
-{/section}
-
-An example of section looped key values:
-
-{section name=sec1 loop=$contacts}
-	phone: {$contacts[sec1].phone}<br>
-	fax: {$contacts[sec1].fax}<br>
-	cell: {$contacts[sec1].cell}<br>
-{/section}
-<p>
-
-testing strip tags
-{strip}
-<table border=0>
-	<tr>
-		<td>
-			<A HREF="{$SCRIPT_NAME}">
-			<font color="red">This is a  test     </font>
-			</A>
-		</td>
-	</tr>
-</table>
-{/strip}
-
-</PRE>
-
-This is an example of the html_select_date function:
-
-<form>
-{html_select_date start_year=1998 end_year=2010}
-</form>
-
-This is an example of the html_select_time function:
-
-<form>
-{html_select_time use_24_hours=false}
-</form>
-
-This is an example of the html_options function:
-
-<form>
-<select name=states>
-{html_options values=$option_values selected=$option_selected output=$option_output}
-</select>
-</form>
-
-{include file="footer.tpl"}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex" />
+  <link rel="StyleSheet" href="/styles/front.css" type="text/css" />
+  <script type="text/javascript" src="/javascripts/jquery-1.4.2.js"></script>
+  <link rel="shortcut icon" href="/favico.ico" type="image/x-icon" />
+  <title>CHAN RA GOI NEM</title>
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" width="100%"><tr><td>
+  <table cellpadding="0" cellspacing="0" width="100%" border="1">
+    <tr>
+      <td width="182px"><iframe style="width: 180px;" name="iframe1" id='iframe1' src="/quanly/categories.php" frameborder="0"></iframe></td>
+      <td><iframe name="iframe2" id='iframe2' src="" frameborder="0"></iframe></td>
+    </tr>
+  </table>
+</td></tr></table>
+</body>
+</html>
