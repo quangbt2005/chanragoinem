@@ -19,9 +19,18 @@
       <iframe name="iframe3" id='iframe3' src="" frameborder="0"></iframe>
     </div>
     <div id="product_detail">
+      <div style="text-align: right; width: 100%"><input type="button" value="Thêm sản phẩm" onclick="goto_product_add();"></div>
       <iframe name="iframe4" id='iframe4' src="" frameborder="0" width="100%"></iframe>
     </div>
   </div>
 </div>
 </body>
+{literal}
+<script language="JavaScript" type="text/javascript">
+function goto_product_add()
+{
+  document.getElementById('iframe4').src='/quanly/product_add.php';
+}
+</script>
+{/literal}
 </html>

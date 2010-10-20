@@ -6,12 +6,16 @@ $cat_list = MySQLSELECT($query);
 $tree          = array();
 $cat_obj_array = array();
 $id_array      = array();
-
+// ---------------------------------------------------------------------------------------------- //
+// Create array of Category objects
+// ---------------------------------------------------------------------------------------------- //
 foreach($cat_list as $cat){
   $cat_obj_array[$cat['id']] = new Category($cat);
   $id_array[] = $cat['id'];
 }
-
+// ---------------------------------------------------------------------------------------------- //
+// Assign level and set child,parent for Category objects
+// ---------------------------------------------------------------------------------------------- //
 $level_processed_count = 0;
 while($level_processed_count < count($cat_obj_array)){
   $level_processed_count = 0;
@@ -37,6 +41,9 @@ while($level_processed_count < count($cat_obj_array)){
 }
 //e($j);
 //pd($cat_obj_array);
+// ---------------------------------------------------------------------------------------------- //
+// Build category path
+// ---------------------------------------------------------------------------------------------- //
 $cat_id = empty($_GET['cat_id']) ? 0 : $_GET['cat_id'];
 if(empty($cat_id)) $cat_id = $id_array[0];
 $category_path = array();
@@ -49,7 +56,9 @@ if(!empty($cat_id) && !empty($cat_obj_array[$cat_id])){
     } else { break; }
   } while (1);
 }
-
+// ---------------------------------------------------------------------------------------------- //
+// Build category tree
+// ---------------------------------------------------------------------------------------------- //
 reset($cat_obj_array[$category_path[0]]->childs);
 $_stack[] = array('level'  => 0,
                   'parent' => $category_path[0],
@@ -66,7 +75,8 @@ while(count($_stack)>0){
   if(count($pointer['list'])){
     do{
       $tmp = current($pointer['list']);
-      $tree[] = $tmp->id;
+      $tmp->is_show = 1;
+      $tree[] = $tmp;
   //    if($isbreak == 1){
   //      e('BREAK 1');
   //      pd($tmp);
@@ -90,12 +100,40 @@ while(count($_stack)>0){
   }
 }
 
+foreach($cat_obj_array as $cat_obj){
+  $cat_obj->parent_obj = NULL;
+}
+
 //p($category_path);
 //p($tree);
 // p($cat_obj_array);
+// ---------------------------------------------------------------------------------------------- //
+// Build category tree for display
+// ---------------------------------------------------------------------------------------------- //
+$tmp_tree = array();
+
+foreach($cat_obj_array as $cat_obj){
+	if($cat_obj->level == 0){
+    $tmp_tree[] = array('id'            => $cat_obj->id,
+                        'level'         => $cat_obj->level,
+                        'category_name' => $cat_obj->data['category_name']);
+    if($cat_obj->id == $category_path[0]){
+      foreach($tree as $cat_obj2){
+        $tmp_tree[] = array('id'            => $cat_obj2->id,
+                            'level'         => $cat_obj2->level,
+                            'category_name' => $cat_obj2->data['category_name']);
+      }
+	 }
+  }
+}
+
+// p($tmp_tree);
+
+$_SESSION['category_path'] = $category_path;
 
 $smarty = new SmartyEx;
 
-$smarty->assign("cat_list",$cat_list);
+// $smarty->assign("cat_list",$cat_list);
+$smarty->assign("cat_list",$tmp_tree);
 $smarty->display('admin/categories.tpl');
 ?>

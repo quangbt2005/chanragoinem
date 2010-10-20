@@ -9,7 +9,7 @@
 <body>
   <table cellpadding="0" cellspacing="0" width="100%">
     {foreach from=$cat_list item=cat}
-    <tr><td><a href="javascript:change_category_detail({$cat.id});" onclick="">{$cat.category_name}</a></td></tr>
+    <tr><td style="padding-left: {math equation="x*y" x=10 y=$cat.level}px;"><a href="javascript:change_category_detail({$cat.id});" onclick="">{$cat.category_name}</a></td></tr>
     {/foreach}
   </table>
 </body>
@@ -17,6 +17,7 @@
 <script languge="javascript">
 function change_category_detail(category_id)
 {
+  window.parent.document.getElementById('iframe1').src='/quanly/categories.php?cat_id=' + category_id;
   window.parent.document.getElementById('iframe2').src='/quanly/category_detail.php?cat_id=' + category_id;
   window.parent.document.getElementById('iframe3').src='/quanly/products.php?cat_id=' + category_id;
 }
