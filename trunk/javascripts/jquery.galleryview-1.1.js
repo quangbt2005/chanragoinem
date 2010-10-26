@@ -4,15 +4,15 @@
 	Author: 		Jack Anderson
 	Version:		1.1 (April 5, 2009)
 	Documentation: 	http://www.spaceforaname.com/jquery/galleryview/
-	
+
 	Please use this development script if you intend to make changes to the
 	plugin code.  For production sites, please use jquery.galleryview-1.0.1-pack.js.
-	
+
 */
 (function($){
 	$.fn.galleryView = function(options) {
 		var opts = $.extend($.fn.galleryView.defaults,options);
-		
+
 		var id;
 		var iterator = 0;
 		var gallery_width;
@@ -27,17 +27,17 @@
 		var frame_caption_size = 20;
 		var frame_margin_top = 5;
 		var pointer_width = 2;
-		
+
 		//Define jQuery objects for reuse
 		var j_gallery;
 		var j_filmstrip;
 		var j_frames;
 		var j_panels;
 		var j_pointer;
-		
+
 /************************************************/
 /*	Plugin Methods								*/
-/************************************************/	
+/************************************************/
 		function showItem(i) {
 			//Disable next/prev buttons until transition is complete
 			$('img.nav-next').unbind('click');
@@ -49,22 +49,22 @@
 					j_panels.fadeOut(opts.transition_speed).eq(i%item_count).fadeIn(opts.transition_speed,function(){
 						if(!has_filmstrip) {
 							$('img.nav-prev').click(showPrevItem);
-							$('img.nav-next').click(showNextItem);		
+							$('img.nav-next').click(showNextItem);
 						}
 					});
-				} 
+				}
 			}
-			
+
 			if(has_filmstrip) {
 				//Slide either pointer or filmstrip, depending on transition method
 				if(slide_method=='strip') {
 					//Stop filmstrip if it's currently in motion
 					j_filmstrip.stop();
-					
+
 					//Determine distance between pointer (eventual destination) and target frame
 					var distance = getPos(j_frames[i]).left - (getPos(j_pointer[0]).left+2);
 					var leftstr = (distance>=0?'-=':'+=')+Math.abs(distance)+'px';
-					
+
 					//Animate filmstrip and slide target frame under pointer
 					//If target frame is a duplicate, jump back to 'original' frame
 					j_filmstrip.animate({
@@ -81,7 +81,7 @@
 							iterator = i;
 							j_filmstrip.css('left','-'+((opts.frame_width+frame_margin)*i)+'px');
 						}
-						
+
 						if(!opts.fade_panels) {
 							j_panels.hide().eq(i%item_count).show();
 						}
@@ -97,16 +97,16 @@
 					//Slide the pointer over the target frame
 					j_pointer.animate({
 						'left':(pos.left-2+'px')
-					},opts.transition_speed,opts.easing,function(){	
+					},opts.transition_speed,opts.easing,function(){
 						if(!opts.fade_panels) {
 							j_panels.hide().eq(i%item_count).show();
-						}	
+						}
 						$('img.nav-prev').click(showPrevItem);
 						$('img.nav-next').click(showNextItem);
 						enableFrameClicking();
 					});
 				}
-			
+
 				if($('a',j_frames[i])[0]) {
 					j_pointer.unbind('click').click(function(){
 						var a = $('a',j_frames[i]).eq(0);
@@ -149,7 +149,7 @@
 				var gPos = getPos(j_gallery[0]);
 				var gLeft = gPos.left;
 				var gTop = gPos.top;
-				
+
 				return {'left':left-gLeft,'top':top-gTop};
 			}
 		};
@@ -169,11 +169,11 @@
 				}
 			});
 		};
-		
+
 		function buildPanels() {
 			//If there are panel captions, add overlay divs
 			if($('.panel-overlay').length>0) {j_panels.append('<div class="overlay"></div>');}
-			
+
 			if(!has_filmstrip) {
 				//Add navigation buttons
 				$('<img />').addClass('nav-next').attr('src',img_path+opts.nav_theme+'/next.png').appendTo(j_gallery).css({
@@ -192,7 +192,7 @@
 					'left':'10px',
 					'display':'none'
 				}).click(showPrevItem);
-				
+
 				$('<img />').addClass('nav-overlay').attr('src',img_path+opts.nav_theme+'/panel-nav-next.png').appendTo(j_gallery).css({
 					'position':'absolute',
 					'zIndex':'1099',
@@ -200,7 +200,7 @@
 					'right':'0',
 					'display':'none'
 				});
-				
+
 				$('<img />').addClass('nav-overlay').attr('src',img_path+opts.nav_theme+'/panel-nav-prev.png').appendTo(j_gallery).css({
 					'position':'absolute',
 					'zIndex':'1099',
@@ -214,19 +214,21 @@
 				'height':(opts.panel_height-parseInt(j_panels.css('paddingTop').split('px')[0],10)-parseInt(j_panels.css('paddingBottom').split('px')[0],10))+'px',
 				'position':'absolute',
 				'top':(opts.filmstrip_position=='top'?(opts.frame_height+frame_margin_top+(opts.show_captions?frame_caption_size:frame_margin_top))+'px':'0px'),
-				'left':'0px',
-				'overflow':'hidden',
+				'left':'0',
+				/*'overflow':'hidden',*/
 				'background':'white',
 				'display':'none'
 			});
 			$('.panel-overlay',j_panels).css({
 				'position':'absolute',
 				'zIndex':'999',
-				'width':(opts.panel_width-20)+'px',
+				/*'width':(opts.panel_width-20)+'px',*/
+				'width':opts.intro_width-20+'px',
 				'height':opts.overlay_height+'px',
-				'top':(opts.overlay_position=='top'?'0':opts.panel_height-opts.overlay_height+'px'),
-				'left':'0',
-				'padding':'0 10px',
+				/*'top':(opts.overlay_position=='top'?'0':opts.panel_height-opts.overlay_height+'px'),*/
+				'top':opts.intro_padding/2 + 'px',
+				'left':opts.panel_width + 'px',
+				'padding':'10px 10px',
 				'color':opts.overlay_text_color,
 				'fontSize':opts.overlay_font_size
 			});
@@ -238,10 +240,13 @@
 			$('.overlay',j_panels).css({
 				'position':'absolute',
 				'zIndex':'998',
-				'width':opts.panel_width+'px',
-				'height':opts.overlay_height+'px',
-				'top':(opts.overlay_position=='top'?'0':opts.panel_height-opts.overlay_height+'px'),
-				'left':'0',
+				/*'width':opts.panel_width+'px',*/
+				/*'height':opts.overlay_height+'px',*/
+				'width':opts.intro_width+'px',
+				'height':(opts.panel_height-opts.intro_padding)+'px',
+				/*'top':(opts.overlay_position=='top'?'0':opts.panel_height-opts.overlay_height+'px'),*/
+				'top':opts.intro_padding/2 + 'px',
+				'left':opts.panel_width + 'px',
 				'background':opts.overlay_color,
 				'opacity':opts.overlay_opacity
 			});
@@ -251,7 +256,7 @@
 				'border':'0'
 			});
 		};
-		
+
 		function buildFilmstrip() {
 			//Add wrapper to filmstrip to hide extra frames
 			j_filmstrip.wrap('<div class="strip_wrapper"></div>');
@@ -263,10 +268,10 @@
 			//If captions are enabled, add caption divs and fill with the image titles
 			if(opts.show_captions) {
 				j_frames.append('<div class="caption"></div>').each(function(i){
-					$(this).find('.caption').html($(this).find('img').attr('title'));			   
+					$(this).find('.caption').html($(this).find('img').attr('title'));
 				});
 			}
-			
+
 			j_filmstrip.css({
 				'listStyle':'none',
 				'margin':'0',
@@ -312,7 +317,7 @@
 				'textAlign':'center',
 				'fontSize':'10px',
 				'height':frame_caption_size+'px',
-				
+
 				'lineHeight':frame_caption_size+'px'
 			});
 			var pointer = $('<div></div>');
@@ -336,7 +341,7 @@
 					'left':((opts.frame_width/2)-10)+'px'
 				});
 			}
-			
+
 			//If the filmstrip is animating, move the strip to the middle third
 			if(slide_method=='strip') {
 				j_filmstrip.css('left','-'+((opts.frame_width+frame_margin)*item_count)+'px');
@@ -350,7 +355,7 @@
 					else {location.href = a.attr('href');}
 				});
 			}
-			
+
 			//Add navigation buttons
 			$('<img />').addClass('nav-next').attr('src',img_path+opts.nav_theme+'/next.png').appendTo(j_gallery).css({
 				'position':'absolute',
@@ -365,16 +370,16 @@
 				'left':(gallery_width/2)-(wrapper_width/2)-10-22+'px'
 			}).click(showPrevItem);
 		};
-		
+
 		//Check mouse to see if it is within the borders of the panel
 		//More reliable than 'mouseover' event when elements overlay the panel
-		function mouseIsOverPanels(x,y) {		
+		function mouseIsOverPanels(x,y) {
 			var pos = getPos(j_gallery[0]);
 			var top = pos.top;
 			var left = pos.left;
-			return x > left && x < left+opts.panel_width && y > top && y < top+opts.panel_height;				
+			return x > left && x < left+opts.panel_width && y > top && y < top+opts.panel_height;
 		};
-		
+
 /************************************************/
 /*	Main Plugin Code							*/
 /************************************************/
@@ -385,34 +390,34 @@
 			$('script').each(function(i){
 				var s = $(this);
 				if(s.attr('src') && s.attr('src').match(/jquery\.galleryview/)){
-					img_path = s.attr('src').split('jquery.galleryview')[0]+'themes/';	
+					img_path = s.attr('src').split('jquery.galleryview')[0]+'themes/';
 				}
 			});
-			
+
 			//Hide gallery to prevent Flash of Unstyled Content (FoUC) in IE
 			j_gallery.css('visibility','hidden');
-			
+
 			//Assign elements to variables for reuse
 			j_filmstrip = $('.filmstrip',j_gallery);
 			j_frames = $('li',j_filmstrip);
 			j_panels = $('.panel',j_gallery);
-			
+
 			id = j_gallery.attr('id');
-			
+
 			has_panels = j_panels.length > 0;
 			has_filmstrip = j_frames.length > 0;
-			
+
 			if(!has_panels) opts.panel_height = 0;
-			
+
 			//Number of frames in filmstrip
 			item_count = has_panels?j_panels.length:j_frames.length;
-			
+
 			//Number of frames that can display within the screen's width
 			//64 = width of block for navigation button * 2
 			//5 = minimum frame margin
-			strip_size = has_panels?Math.floor((opts.panel_width-64)/(opts.frame_width+frame_margin)):Math.min(item_count,opts.filmstrip_size); 
-			
-			
+			strip_size = has_panels?Math.floor((opts.panel_width-64)/(opts.frame_width+frame_margin)):Math.min(item_count,opts.filmstrip_size);
+
+
 			/************************************************/
 			/*	Determine transition method for filmstrip	*/
 			/************************************************/
@@ -423,24 +428,24 @@
 						strip_size = item_count;
 					}
 					else {slide_method = 'strip';}
-			
+
 			/************************************************/
 			/*	Determine dimensions of various elements	*/
 			/************************************************/
-					
+
 					//Width of gallery block
 					gallery_width = has_panels?opts.panel_width:(strip_size*(opts.frame_width+frame_margin))-frame_margin+64;
-					
+
 					//Height of gallery block = screen + filmstrip + captions (optional)
 					gallery_height = (has_panels?opts.panel_height:0)+(has_filmstrip?opts.frame_height+frame_margin_top+(opts.show_captions?frame_caption_size:frame_margin_top):0);
-					
+
 					//Width of filmstrip
 					if(slide_method == 'pointer') {strip_width = (opts.frame_width*item_count)+(frame_margin*(item_count));}
 					else {strip_width = (opts.frame_width*item_count*3)+(frame_margin*(item_count*3));}
-					
+
 					//Width of filmstrip wrapper (to hide overflow)
 					wrapper_width = ((strip_size*opts.frame_width)+((strip_size-1)*frame_margin));
-			
+
 			/************************************************/
 			/*	Apply CSS Styles							*/
 			/************************************************/
@@ -452,7 +457,7 @@
 						'width':gallery_width+'px',
 						'height':gallery_height+'px'
 					});
-			
+
 			/************************************************/
 			/*	Build filmstrip and/or panels				*/
 			/************************************************/
@@ -463,15 +468,15 @@
 						buildPanels();
 					}
 
-			
+
 			/************************************************/
 			/*	Add events to various elements				*/
 			/************************************************/
 					if(has_filmstrip) enableFrameClicking();
-					
-						
-						
-						$().mousemove(function(e){							
+
+
+
+						$().mousemove(function(e){
 							if(mouseIsOverPanels(e.pageX,e.pageY)) {
 								if(opts.pause_on_hover) {
 									$(document).oneTime(500,"animation_pause",function(){
@@ -501,8 +506,8 @@
 								}
 							}
 						});
-			
-			
+
+
 			/************************************************/
 			/*	Initiate Automated Animation				*/
 			/************************************************/
@@ -515,12 +520,12 @@
 							showNextItem();
 						});
 					}
-					
+
 					//Make gallery visible now that work is complete
 					j_gallery.css('visibility','visible');
 		});
 	};
-	
+
 	$.fn.galleryView.defaults = {
 		panel_width: 400,
 		panel_height: 300,
