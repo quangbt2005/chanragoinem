@@ -69,7 +69,7 @@ if(is_file($img_dir.$f)){
         $sy = ($cy - $h)/2;
 
         $canvas = imagecreatetruecolor($cx,$cy);
-        $white  = imagecolorallocate($canvas, 255, 255, 255);
+        $white  = imagecolorallocate($canvas, 0, 255, 255);
         imagefill($canvas, 0, 0, $white);
         imagecopy($canvas, $im, $sx, $sy, 0, 0, $w, $h);
         $im = $canvas;

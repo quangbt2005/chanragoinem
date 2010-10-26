@@ -8,9 +8,9 @@ MySQL - 5.1.36-community-log : Database - chanragoinem
 
 /*!40101 SET SQL_MODE=''*/;
 
-create database if not exists `chanragoinem`;
+create database if not exists `belamdep_chanra`;
 
-USE `chanragoinem`;
+USE `belamdep_chanra`;
 
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
