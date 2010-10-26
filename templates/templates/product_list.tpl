@@ -29,16 +29,18 @@
   <script type="text/javascript">
   $(document).ready(function(){
     $('#photos').galleryView({
-      panel_width: 400,
-      panel_height: 300,
-      frame_width: 30,
-      frame_height: 30,
-      overlay_color: '#222',
+      panel_width: 670,
+      panel_height: 486,
+      intro_width: 350,
+      intro_padding: 30,
+      frame_width: 80,
+      frame_height: 60,
+      overlay_color: 'cyan',
       overlay_text_color: 'white',
       caption_text_color: '#222',
       background_color: 'transparent',
       border: 'none',
-      nav_theme: 'light',
+      /*nav_theme: 'light',*/
       easing: 'easeInOutQuad',
       pause_on_hover: true
     });
@@ -50,16 +52,15 @@
 <div id="photos" class="galleryview">
   {foreach from=$product_list item=product key=key}
   <div class="panel">
-    <img alt="{$product.product_name}" src="/product_thumb.php?f={$product.product_image}&w=440&h=auto&ma=283&cx=460&cy=303" />
+    <img alt="{$product.product_name}" src="/product_thumb.php?f={$product.product_image}&w=640&h=auto&ma=480&cx=670&cy=486" />
     <div class="panel-overlay">
-      <h2>Effet du soleil sur le paysage</h2>
-      <p>Photo by <a href="http://www.sxc.hu/profile/tomharry" target="_blank">tomharry</a>.  View full-size photo <a href="http://www.sxc.hu/photo/158829" target="_blank">here</a>.</p>
+      {$product.product_description}
     </div>
   </div>
   {/foreach}
   <ul class="filmstrip">
     {foreach from=$product_list item=product key=key}
-    <li><img alt="{$product.product_name}" src="/product_thumb.php?f={$product.product_image}&w=30&h=30" /></li>
+    <li><img alt="{$product.product_name}" src="/product_thumb.php?f={$product.product_image}&w=80&h=60" /></li>
     {/foreach}
   </ul>
 </div>

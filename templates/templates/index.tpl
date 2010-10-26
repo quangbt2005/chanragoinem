@@ -10,11 +10,11 @@
   <title>CHAN RA GOI NEM</title>
 </head>
 <body>
-<table cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<table id="bigtable" cellpadding="0" cellspacing="0" width="100%" border="1"><tr><td>
   <table cellpadding="0" cellspacing="0" width="100%" border="1">
     <tr>
-      <td width="182px"><iframe style="width: 180px;" name="iframe1" id='iframe1' src="/quanly/categories.php" frameborder="0"></iframe></td>
-      <td><iframe name="iframe2" id='iframe2' src="" frameborder="0"></iframe></td>
+      <td width="182px" valign="top"><iframe id="if_categories" style="width: 180px;" name="iframe1" id='iframe1' src="/quanly/categories.php" frameborder="0"></iframe></td>
+      <td valign="top"><iframe id="if_products" name="iframe2" id='iframe2' src="/products.php" frameborder="0"></iframe></td>
     </tr>
   </table>
 </td></tr></table>
