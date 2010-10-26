@@ -10,27 +10,11 @@
   <script type="text/javascript" src="javascripts/jquery.galleryview-1.1.js"></script>
   <script type="text/javascript" src="javascripts/jquery.timers-1.2.js"></script>
   {literal}
-  <style type="text/css">
-  body {
-    background: #444;
-    color: white;
-  }
-  a:link,a:visited {
-    color: #ddd !important;
-    text-decoration: underline;
-  }
-  a:hover {
-    text-decoration: none;
-  }
-  h3 {
-    border-bottom-color: white;
-  }
-  </style>
   <script type="text/javascript">
   $(document).ready(function(){
     $('#photos').galleryView({
-      panel_width: 670,
-      panel_height: 486,
+      panel_width: 550,
+      panel_height: 400,
       intro_width: 350,
       intro_padding: 30,
       frame_width: 80,
@@ -52,7 +36,7 @@
 <div id="photos" class="galleryview">
   {foreach from=$product_list item=product key=key}
   <div class="panel">
-    <img alt="{$product.product_name}" src="/product_thumb.php?f={$product.product_image}&w=640&h=auto&ma=480&cx=670&cy=486" />
+    <img alt="{$product.product_name}" src="/product_thumb.php?f={$product.product_image}&w=520&h=auto&ma=390&cx=550&cy=400" />
     <div class="panel-overlay">
       {$product.product_description}
     </div>

@@ -19,7 +19,7 @@ define( 'STYLES_PATH',                WEB_ROOT . 'styles/' );
 define( 'SYS_IMAGES_PATH',            SYS_ROOT . 'images/' );
 
 define( 'DB_HOST', 'localhost' );
-define( 'DB_NAME', 'chanragoinem' );
+define( 'DB_NAME', 'belamdep_chanra' );
 define( 'DB_USER', 'belamdep_quangbt' );
 define( 'DB_PASS', 'mi@1lauqua' );
 ?>
