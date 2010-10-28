@@ -10,7 +10,7 @@
 </head>
 <body>
 <div id="allscreen">
-  <div id="allleft"><iframe name="iframe1" id='iframe1' src="/quanly/categories.php" frameborder="0"></iframe></div>
+  <div id="allleft"><iframe name="iframe1" id='iframe1' src="/quanly/categories.php?f=a" frameborder="0"></iframe></div>
   <div id="allright">
     <div id="cat_detail">
       <iframe name="iframe2" id='iframe2' src="/quanly/category_detail.php?cat_id=1" frameborder="0"></iframe>
