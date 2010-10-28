@@ -9,44 +9,30 @@
   <script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
   <script type="text/javascript" src="javascripts/jquery.galleryview-1.1.js"></script>
   <script type="text/javascript" src="javascripts/jquery.timers-1.2.js"></script>
-  {literal}
-  <script type="text/javascript">
-  $(document).ready(function(){
-    $('#photos').galleryView({
-      panel_width: 550,
-      panel_height: 400,
-      intro_width: 350,
-      intro_padding: 30,
-      frame_width: 80,
-      frame_height: 60,
-      overlay_color: 'cyan',
-      overlay_text_color: 'white',
-      caption_text_color: '#222',
-      background_color: 'transparent',
-      border: 'none',
-      /*nav_theme: 'light',*/
-      easing: 'easeInOutQuad',
-      pause_on_hover: true
-    });
-  });
-  </script>
-  {/literal}
 </head>
 <body>
-<div id="photos" class="galleryview">
-  {foreach from=$product_list item=product key=key}
-  <div class="panel">
-    <img alt="{$product.product_name}" src="/product_thumb.php?f={$product.product_image}&w=520&h=auto&ma=390&cx=550&cy=400" />
-    <div class="panel-overlay">
-      {$product.product_description}
-    </div>
-  </div>
-  {/foreach}
-  <ul class="filmstrip">
-    {foreach from=$product_list item=product key=key}
-    <li><img alt="{$product.product_name}" src="/product_thumb.php?f={$product.product_image}&w=80&h=60" /></li>
-    {/foreach}
-  </ul>
-</div>
+<table cellpadding="0" cellspacing="3" border="1" width="100%">
+{foreach from=$rows item=row}
+	<tr>
+	{foreach from=$row item=product key=key}
+	{if $product.id!=''}
+	<td width="50%" valign="top"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td valign="top"><img src="product_thumb.php?f={$product.product_image}&w=240&h=180"></td>
+			<td valign="top">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr><td valign="top">{$product.product_name}</td></tr>
+					<tr><td valign="top">{$product.product_price}</td></tr>
+				</table>
+			</td>
+		</tr>
+	</table></td>
+	{else}
+	<td>&nbsp;</td>
+	{/if}
+	{/foreach}
+	</tr>
+{/foreach}
+</table>
 </body>
 </html>

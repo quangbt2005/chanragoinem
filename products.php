@@ -38,11 +38,21 @@ function List_Product_By_Category( $category_id, $offset=0,
   return MySQLSELECT($query);
 }
 // ---------------------------------------------------------------------------------------------- //
-$product_list = List_Product_By_Category(1,0,100);
+function Load_Fist_Category()
+{
+  $query  = "SELECT id FROM categories WHERE deleted='0' LIMIT 1";
+  $result = MySQLSELECT($query);
+  return empty($result[0]['id']) ? '' : $result[0]['id'];
+}
+// ---------------------------------------------------------------------------------------------- //
+$cat_id = empty($_GET['cat_id']) ? Load_Fist_Category() : $_GET['cat_id'];
+$product_list = List_Product_By_Category($cat_id,0,100);
+if(count($product_list)%2 != 0) $product_list = array_pad($product_list, count($product_list)+1,array('product_id'=>''));
+$rows = array_chunk($product_list, 2);
 // pd($Product_List);
 $smarty = new SmartyEx;
 
-$smarty->assign("product_list", $product_list);
+$smarty->assign("rows", $rows);
 $smarty->display('product_list.tpl');
 
 ?>
