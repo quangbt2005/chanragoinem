@@ -1,5 +1,4 @@
 <?php
-require '../init.php';
 $query    = "SELECT * FROM categories WHERE deleted='0' ORDER BY created_date";
 $cat_list = MySQLSELECT($query);
 
@@ -44,8 +43,6 @@ while($level_processed_count < count($cat_obj_array)){
 // ---------------------------------------------------------------------------------------------- //
 // Build category path
 // ---------------------------------------------------------------------------------------------- //
-$cat_id = empty($_GET['cat_id']) ? 0 : $_GET['cat_id'];
-if(empty($cat_id)) $cat_id = $id_array[0];
 $category_path = array();
 if(!empty($cat_id) && !empty($cat_obj_array[$cat_id])){
   $pointer = $cat_obj_array[$cat_id];
@@ -113,7 +110,7 @@ foreach($cat_obj_array as $cat_obj){
 $tmp_tree = array();
 
 foreach($cat_obj_array as $cat_obj){
-	if($cat_obj->level == 0){
+  if($cat_obj->level == 0){
     $tmp_tree[] = array('id'            => $cat_obj->id,
                         'level'         => $cat_obj->level,
                         'category_name' => $cat_obj->data['category_name']);
@@ -123,7 +120,7 @@ foreach($cat_obj_array as $cat_obj){
                             'level'         => $cat_obj2->level,
                             'category_name' => $cat_obj2->data['category_name']);
       }
-	 }
+   }
   }
 }
 
@@ -133,13 +130,8 @@ $_SESSION['category_path'] = $category_path;
 
 $smarty = new SmartyEx;
 
-if($_GET['f'] == 'a'){
-	$smarty->assign("HTTPREFERER",'quanly');
-  $smarty->display('admin/categories.tpl');
-} else {
-	$smarty->assign("HTTPREFERER",'front');
-  $smarty->assign("cat_list",$tmp_tree);
+$smarty->assign("HTTPREFERER",'front');
+$smarty->assign("cat_list",$tmp_tree);
 
-  $categories_tree = $smarty->fetch('categories.tpl');
-}
+$categories_tree = $smarty->fetch('categories.tpl');
 ?>
