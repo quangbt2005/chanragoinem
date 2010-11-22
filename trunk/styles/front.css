@@ -12,11 +12,14 @@ table#bigtable {
       font-family: helvetica, arial, sans-serif;
       font-size: 10pt;
       line-height: 16pt;
-      -moz-box-shadow: #000 4px 4px 10px;
-      -webkit-box-shadow: #000 4px 4px 10px;
+      /*-moz-box-shadow: #000 4px 4px 10px;
+      -webkit-box-shadow: #000 4px 4px 10px;*/
 }
 #if_products{
 	height: 700px;
 }
 ul#headermenu li{display: inline;}
-ul#headermenu li a{padding: 10px 20px;text-decoration: none;color: red;}
+ul#headermenu li a{padding: 10px 20px;text-decoration: none;color: yellow;border-right: 1px solid #cccccc}
+ul#headermenu li a:hover{color: green}
+table .l-menu-link td a{color: blue;}
+table .l-menu-link td a:hover{color: yellow;}
