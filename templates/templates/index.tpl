@@ -10,25 +10,48 @@
   <title>CHAN RA GOI NEM</title>
 </head>
 <body>
-<table id="bigtable" cellpadding="0" cellspacing="0" border="1">
+<table id="bigtable" cellpadding="0" cellspacing="0" border="0">
   <tr>
-    <td>
-      <ul id="headermenu">
+    <td><embed width="100%" height="200" flashvars="dataXml=http://www.chanragoinem.com/modules/mod_jsn_imageshow_pro/jsn_imageshow_pro/xmldata58.xml&amp;imageshowUrl=http://www.chanragoinem.com/modules/mod_jsn_imageshow_pro/jsn_imageshow_pro/imageshow.swf&amp;slideTiming=6&amp;repeatCount=0&amp;processOrder=forward&amp;shadowImageUrl=&amp;captionText=&amp;captionFont=Arial&amp;captionSize=12&amp;captionColor=0xFFFFFF&amp;captionAlignment=left&amp;captionPosition=bottom&amp;captionPadding=6,10&amp;captionBgOpacity=50&amp;captionBgColor=0x000000&amp;showProgress=0&amp;overlayEffectName=magic_field&amp;overlayImageUrl=&amp;overlayImageOpacity=75&amp;overlayImageX=100&amp;overlayImageY=100&amp;motionTiming=3&amp;motionEase=Sine&amp;moveRange=0&amp;scaleRange=0&amp;rotationRange=0&amp;transitionType=fade&amp;transitionTiming=2&amp;transitionEase=Sine&amp;enableLink=1&amp;linkUrl=&amp;linkOpen=_blank" wmode="opaque" quality="high" bgcolor="ffffff" name="imageshow" id="imageshow" style="" src="http://www.chanragoinem.com/modules/mod_jsn_imageshow_pro/jsn_imageshow_pro/loader.swf" type="application/x-shockwave-flash"></td>
+  </tr>
+  <tr>
+    <td style="background: url(/images/body_bkg/nav-background.png) repeat-x center center">
+      <ul id="headermenu" style="padding:0px;font-weight: bold">
         <li><a href="#">TRANG CHỦ</a></li>
+        <li><a href="#">SẢN PHẨM</a></li>
         <li><a href="#">LIÊN HỆ</a></li>
       </ul>
     </td>
   </tr>
-  <tr><td>
-  <table cellpadding="0" cellspacing="0" width="100%" border="1">
+  <tr><td><table cellpadding="0" cellspacing="2" width="100%" border="0">
     <tr>
-      <td width="192px" valign="top">{$categories_tree}</td>
+      <td width="192px" valign="top" style="background-color: rgb(100,100,100);">
+        <div style="background: url(/images/body_bkg/mainnav-bg.gif) repeat-x center center;padding: 5px;color: white;font-weight:bold;">Danh Mục</div>
+        <div>{$categories_tree}</div><br />
+        <div style="background: url(/images/body_bkg/mainnav-bg.gif) repeat-x center center;padding: 5px;color: white;font-weight:bold;border-top: 1px solid #cccccc">Hỗ Trợ</div>
+        <div style="background-color: rgb(150,150,150);border: 1px solid #cccccc;border-top: 1px solid #969696">
+          <p style="background: url(/images/glossy-3d-blue-phone-icon.png) no-repeat left center; padding: 10px 0px 10px 50px;"><span style="color: blue; font-weight: bold;font-size:15px;">1234567890 1</span></p>
+          <p style="background: url(/images/glossy-3d-blue-phone-icon.png) no-repeat left center; padding: 10px 0px 10px 50px;"><span style="color: blue; font-weight: bold;font-size:15px;">1234567890 2</span></p>
+        </div><br>
+        <div style="background: url(/images/body_bkg/mainnav-bg.gif) repeat-x center center;padding: 5px;color: white;font-weight:bold;border-top: 1px solid #cccccc">Nhãn Hiệu</div>
+        <div style="background-color: rgb(150,150,150);border: 1px solid #cccccc;border-top: 1px solid #969696;text-align: center;">
+          <img src="/images/dunlopillo.jpg" style="margin-top: 5px;">
+          <img src="/images/edena.jpg">
+          <img src="/images/everhome.jpg">
+          <img src="/images/kymdan.jpg">
+          <img src="/images/liena.jpg">
+          <img src="/images/vanthanh.jpg">
+        </div>
+      </td>
       <td valign="top" align="center" style="width: 910px;">{$product_list}</td>
-    </tr>
-  </table>
-</td></tr></table>
-{literal}
-<style type="text/css">#dropin {position:absolute;visibility:hidden;left:400px;top:50px;width:400px;height:200px;background-color:#FFFFEE;border:4px solid black;padding:5px;}#dropin h1 {font-size:22px;text-align:center;}#dropin h1 a {color:#000FFF;}#dropin p, #dropin li {font-size:14px;font-weight:bold}#dropin p a {font-size:22px;color:#CC0000;}</style><script language="javascript1.2" type="text/javascript">function init(){if (arguments.callee.done)return;arguments.callee.done=true;doPopup();};window.onload = init;var ie=document.all;var dom=document.getElementById;var ns4=document.layers;var calunits=document.layers? "" : "px";var bouncelimit=32;var direction="up";function initbox(){if (!dom&&!ie&&!ns4) return;crossobj=(dom)?document.getElementById("dropin").style : ie? document.all.dropin : document.dropin;scroll_top=(ie)? truebody().scrollTop : window.pageYOffset;crossobj.top=scroll_top-250+calunits;crossobj.visibility=(dom||ie)? "visible" : "show";dropstart=setInterval("dropin()",50)}function dropin(){scroll_top=(ie)? truebody().scrollTop : window.pageYOffset;if (parseInt(crossobj.top)<80+scroll_top)crossobj.top=parseInt(crossobj.top)+40+calunits;else{clearInterval(dropstart);bouncestart=setInterval("bouncein()",50)}}function bouncein(){crossobj.top=parseInt(crossobj.top)-bouncelimit+calunits;if (bouncelimit<0)bouncelimit+=8;bouncelimit=bouncelimit*-1;if (bouncelimit==0){clearInterval(bouncestart)}}function dismissbox(){if (window.bouncestart) clearInterval(bouncestart);crossobj.visibility="hidden"}function truebody(){return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body}function doPopup() {initbox();}function getStyleClass (className) {for (var s = 0; s < document.styleSheets.length; s++){if(document.styleSheets[s].rules){for (var r = 0; r < document.styleSheets[s].rules.length; r++){if (document.styleSheets[s].rules[r].selectorText == '.' + className){return document.styleSheets[s].rules[r];}}}else if(document.styleSheets[s].cssRules){for (var r = 0; r < document.styleSheets[s].cssRules.length; r++){if (document.styleSheets[s].cssRules[r].selectorText == '.' + className)return document.styleSheets[s].cssRules[r];}}}return null;}</script><div id="dropin"><div align="right"><a href="#" onClick="dismissbox();return false">Close Box </a></div><BR><p id="take-survey" style="display:none;"><a href="http://www.kwiksurveys.com">Survey</a></p><h1><a href="http://www.kwiksurveys.com/online-survey.php?surveyID=HONMHL_cc291f11" target="_blank">Please take our Survey</a></h1><p align="center">We appreciate your feedback. Thank you!<BR><BR><a href="http://www.kwiksurveys.com/online-survey.php?surveyID=HONMHL_cc291f11" target="_blank"><b>Take survey</b></a></p></div>
-{/literal}
+    </tr></table></td>
+  </tr>
+  <tr>
+    <td style="background: url(/images/body_bkg/footer-left.gif) repeat-x scroll top center;height: 100px;" align="center">
+     Copyright © 2010 Chăn - Ra - Gối - Nệm. Công ty TNHH Trang trí nội thất HOÀN MỸ<br />
+     329 Lê Văn Lương, P. Tân Quy, Q.7, TP. Hồ Chí Minh. Tel: (083) 771.5090 - DĐ: 0918.803.986 - 0903.301.595<br />
+    </td>
+  </tr>
+</table>
 </body>
 </html>
