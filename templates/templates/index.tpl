@@ -21,8 +21,8 @@
   <tr>
     <td style="background: url(/images/body_bkg/header_bg.gif) repeat-x center center;height: 42px;">
       <ul id="headermenu" style="padding:0px;font-weight: bold;margin: 0px">
-        <li><a href="#" style="background: url(/images/body_bkg/HomeIcon.gif) no-repeat 10px center;padding-left: 40px">TRANG CHỦ</a></li>
-        <li><a href="#" style="background: url(/images/body_bkg/girl.png) no-repeat 5px center;padding-left: 35px">SẢN PHẨM</a></li>
+        <li><a href="/" style="background: url(/images/body_bkg/HomeIcon.gif) no-repeat 10px center;padding-left: 40px">TRANG CHỦ</a></li>
+        <li><a href="#" style="background: url(/images/body_bkg/girl.png) no-repeat 5px center;padding-left: 35px"><span style="color: red">SẢN PHẨM</span></a></li>
         <li><a href="#" style="background: url(/images/body_bkg/contactIcon.gif) no-repeat 10px center;padding-left: 40px">LIÊN HỆ</a></li>
       </ul>
     </td>

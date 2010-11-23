@@ -1,6 +1,6 @@
 <?php
 //define( 'SYS_ROOT', '/home/belamdep/public_html/' . SUBDOMAIN );
-//define( 'SYS_ROOT', '/home/belamdep/public_html/b2v_blog/' . SUBDOMAIN );
+//define( 'SYS_ROOT', '/home/belamdep/public_html/b2v_blog/');
 define( 'SYS_ROOT', 'd:/www/chanragoinem/' );
 
 define( 'WEB_ROOT', '/' );
