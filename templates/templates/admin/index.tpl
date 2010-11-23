@@ -9,26 +9,29 @@
   <title>CHAN RA GOI NEM</title>
 </head>
 <body>
-<div id="allscreen">
-  <div id="allleft"><iframe name="iframe1" id='iframe1' src="/quanly/categories.php?f=a" frameborder="0"></iframe></div>
-  <div id="allright">
-    <div id="cat_detail">
-      <iframe name="iframe2" id='iframe2' src="/quanly/category_detail.php?cat_id=1" frameborder="0"></iframe>
-    </div>
-    <div id="product_list">
-      <iframe name="iframe3" id='iframe3' src="" frameborder="0"></iframe>
-    </div>
-    <div id="product_detail">
-      <div style="text-align: right; width: 100%"><input type="button" value="Thêm sản phẩm" onclick="goto_product_add();"></div>
-      <iframe name="iframe4" id='iframe4' src="" frameborder="0" width="100%"></iframe>
-    </div>
-  </div>
-</div>
+<table cellpadding="0" cellspacing="0" width="100%" id="bigtable" border="0" style="width:1024px;margin: auto;border: 1px solid #cccccc">
+  <tr>
+    <td valign="top" width="200" style="border-right: 1px solid #cccccc"><iframe name="iframe1" id='iframe1' src="/quanly/categories.php" frameborder="0"></iframe></td>
+    <td>
+      <table cellpadding="0" cellspacing="3" width="100%" border="0">
+        <tr><td colspan="2" style="border-bottom: 1px solid #cccccc"><iframe name="iframe2" id='iframe2' src="/quanly/category_detail.php?cat_id=1" frameborder="0"></iframe></td></tr>
+        <tr><td colspan="2" style="border-bottom: 1px solid #cccccc"><iframe name="iframe3" id='iframe3' src="" frameborder="0"></iframe></td></tr>
+        <tr>
+         <td align="left" style="border: none;"><span style="font-size: 20px;color: blue;"><b>Chi tiết sản phẩm</b></span><br />&nbsp;</td>
+         <td align="right" style="border: none;border-right: 1px solid #cccccc">
+          <input type="button" value="Thêm sản phẩm" onclick="goto_product_add();">
+        </tr>
+        <tr><td colspan="2">
+          <iframe name="iframe4" id='iframe4' src="" frameborder="0" width="100%"></iframe>
+         </td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
 </body>
 {literal}
 <script language="JavaScript" type="text/javascript">
-function goto_product_add()
-{
+function goto_product_add(){
   document.getElementById('iframe4').src='/quanly/product_add.php';
 }
 </script>

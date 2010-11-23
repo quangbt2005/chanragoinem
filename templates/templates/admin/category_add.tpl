@@ -4,21 +4,23 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex" />
-  <link rel="StyleSheet" href="/style/admin.css" type="text/css" />
+  <link rel="StyleSheet" href="/styles/admin.css" type="text/css" />
 </head>
 <body>
   <form method="post">
-  <table cellpadding="0" cellspacing="0" width="100%">
-    <tr><th>Ten Danh Muc</th><td><input type="text" name="cat_name"></td></tr>
-    <tr><th>Danh Muc Cha</th><td>
-        <select name="cat_parent">
+  <span style="font-size: 20px;color: blue;"><b>Thêm danh mục</b></span><br />&nbsp;
+  <table cellpadding="0" cellspacing="0" width="95%" class="input_table">
+    <tr><th colspan="2" align="right">&nbsp;</th></tr>
+    <tr><th align="right" style="padding: 10px;" width="120">Tên Danh Mục</th><td align="left" style="padding: 10px;"><input type="text" name="cat_name" style="width: 340px"></td></tr>
+    <tr><th align="right" style="padding: 10px;">Danh Mục Cha</th><td align="left" style="padding: 10px;">
+        <select name="cat_parent" style="width: 240px">
           <option value="">---------------</option>
           {foreach from=$cat_list item=cat}
           <option value="{$cat.id}">{$cat.category_name}</option>
           {/foreach}
         </select>
       </td></tr>
-    <tr><td colspan="2"><input type="submit" value="Them"></td></tr>
+    <tr><th colspan="2"><input type="submit" value="Thêm"></th></tr>
   </table>
   </form>
 </body>

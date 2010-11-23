@@ -133,13 +133,6 @@ $_SESSION['category_path'] = $category_path;
 
 $smarty = new SmartyEx;
 
-if($_GET['f'] == 'a'){
-	$smarty->assign("HTTPREFERER",'quanly');
-  $smarty->display('admin/categories.tpl');
-} else {
-	$smarty->assign("HTTPREFERER",'front');
-  $smarty->assign("cat_list",$tmp_tree);
-
-  $categories_tree = $smarty->fetch('categories.tpl');
-}
+$smarty->assign("cat_list",$tmp_tree);
+$smarty->display('admin/categories.tpl');
 ?>
