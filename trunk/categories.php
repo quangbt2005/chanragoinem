@@ -128,7 +128,7 @@ foreach($cat_obj_array as $cat_obj){
 
 $_SESSION['category_path'] = $category_path;
 
-$smarty = new SmartyEx;
+// $smarty = new SmartyEx;
 
 $smarty->assign("HTTPREFERER",'front');
 $smarty->assign("cat_list",$tmp_tree);

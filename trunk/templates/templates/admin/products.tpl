@@ -4,17 +4,24 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex" />
-  <link rel="StyleSheet" href="/style/admin.css" type="text/css" />
+  <link rel="StyleSheet" href="/styles/admin.css" type="text/css" />
   <script type="text/javascript" src="/javascripts/jquery-1.4.2.js"></script>
 </head>
 <body>
-  <table cellpadding="0" cellspacing="0" width="100%">
+  <span style="font-size: 20px;color: blue;"><b>Danh sách sản phẩm</b></span><br />&nbsp;
+  <table cellpadding="0" cellspacing="0" width="95%" class="input_table">
+    <tr>
+      <th align="center" width="3%">STT</th>
+      <th align="center" width="50%">Tên Sản Phẩm</th>
+      <th align="center" width="30%">Giá</th>
+      <th align="center" width="17%">&nbsp</th>
+    </tr>
     {foreach from=$product_list item=product key=key}
     <tr>
-      <td>{math equation="x + y" x=$key y=1}</td>
+      <td align="center">{math equation="x + y" x=$key y=1}</td>
       <td><a href="javascript:change_product_detail({$product.id});">{$product.product_name}</a></td>
-      <td>{number_format number=$product.product_price}&nbsp;VND</td>
-      <td><input type="button" onclick="delete_product({$product.id})" value="Xoa"></td>
+      <td align="right">{number_format number=$product.product_price}&nbsp;VND</td>
+      <td align="center"><input type="button" onclick="delete_product({$product.id})" value="Xóa"></td>
     </tr>
     {/foreach}
   </table>

@@ -4,13 +4,15 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex" />
-  <link rel="StyleSheet" href="/style/admin.css" type="text/css" />
+  <link rel="StyleSheet" href="/styles/admin.css" type="text/css" />
 </head>
 <body>
   <form method="post">
-  <table cellpadding="0" cellspacing="0" width="100%">
-    <tr><th>Ten Danh Muc</th><td><input type="text" value="{$cat.category_name}" name="cat_name"></td></tr>
-    <tr><th>Danh Muc Cha</th><td><select name="cat_parent">
+  <span style="font-size: 20px;color: blue;"><b>Quản lý danh mục</b></span><br />&nbsp;
+  <table cellpadding="0" cellspacing="0" width="95%" class="input_table">
+    <tr><th colspan="2" align="right"><input type="button" value="Thêm danh mục" onclick="goto_category_add();"></th></tr>
+    <tr><th align="right" style="padding: 10px;" width="120">Tên Danh Mục</th><td align="left" style="padding: 10px;"><input type="text" value="{$cat.category_name}" name="cat_name" style="width: 340px"></td></tr>
+    <tr><th align="right" style="padding: 10px;">Danh Mục Cha</th><td align="left" style="padding: 10px;"><select name="cat_parent" style="width: 240px">
           <option value="">---------------</option>
           {foreach from=$cat_list item=pcat}
           {if $cat.id != $pcat.id}
@@ -18,8 +20,7 @@
           {/if}
           {/foreach}
         </select></td></tr>
-    <tr><td colspan="2"><input type="button" value="Them" onclick="goto_category_add();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="submit" value="Sua"></td></tr>
-    <tr><td colspan="2"><input type="submit" name="submit" value="Xoa"></td></tr>
+    <tr><th colspan="2" align="center"><input type="submit" name="submit" value="Lưu thay đổi">&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="submit" value="Xóa danh mục này"></th></tr>
   </table><input type="hidden" value="{$cat.id}" name="cat_id">
   </form>
 </body>

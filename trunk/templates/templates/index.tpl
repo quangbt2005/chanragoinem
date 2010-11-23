@@ -11,15 +11,19 @@
 </head>
 <body>
 <table id="bigtable" cellpadding="0" cellspacing="0" border="0">
+  <tr><td><table cellpadding="0" cellspacing="0" border="0" width="100%" style="background: url(/images/body_bkg/header-bg.png) repeat-x scroll 0 0 #EDEDED;border: 1px solid #dddddd"><tr>
+    <td style="padding-left: 150px;font-family: ariston,tahoma,verdana;font-weight: bold;font-size: 40px;color: blue;">TEN CONG TY</td>
+    <td align="right" style="padding-right: 50px;"><img src="/images/body_bkg/logo_copy.jpg"></td></tr></table>
+  </tr>
   <tr>
     <td><embed width="100%" height="200" flashvars="dataXml=http://www.chanragoinem.com/modules/mod_jsn_imageshow_pro/jsn_imageshow_pro/xmldata58.xml&amp;imageshowUrl=http://www.chanragoinem.com/modules/mod_jsn_imageshow_pro/jsn_imageshow_pro/imageshow.swf&amp;slideTiming=6&amp;repeatCount=0&amp;processOrder=forward&amp;shadowImageUrl=&amp;captionText=&amp;captionFont=Arial&amp;captionSize=12&amp;captionColor=0xFFFFFF&amp;captionAlignment=left&amp;captionPosition=bottom&amp;captionPadding=6,10&amp;captionBgOpacity=50&amp;captionBgColor=0x000000&amp;showProgress=0&amp;overlayEffectName=magic_field&amp;overlayImageUrl=&amp;overlayImageOpacity=75&amp;overlayImageX=100&amp;overlayImageY=100&amp;motionTiming=3&amp;motionEase=Sine&amp;moveRange=0&amp;scaleRange=0&amp;rotationRange=0&amp;transitionType=fade&amp;transitionTiming=2&amp;transitionEase=Sine&amp;enableLink=1&amp;linkUrl=&amp;linkOpen=_blank" wmode="opaque" quality="high" bgcolor="ffffff" name="imageshow" id="imageshow" style="" src="http://www.chanragoinem.com/modules/mod_jsn_imageshow_pro/jsn_imageshow_pro/loader.swf" type="application/x-shockwave-flash"></td>
   </tr>
   <tr>
-    <td style="background: url(/images/body_bkg/nav-background.png) repeat-x center center">
-      <ul id="headermenu" style="padding:0px;font-weight: bold">
-        <li><a href="#">TRANG CHỦ</a></li>
-        <li><a href="#">SẢN PHẨM</a></li>
-        <li><a href="#">LIÊN HỆ</a></li>
+    <td style="background: url(/images/body_bkg/header_bg.gif) repeat-x center center;height: 42px;">
+      <ul id="headermenu" style="padding:0px;font-weight: bold;margin: 0px">
+        <li><a href="#" style="background: url(/images/body_bkg/HomeIcon.gif) no-repeat 10px center;padding-left: 40px">TRANG CHỦ</a></li>
+        <li><a href="#" style="background: url(/images/body_bkg/girl.png) no-repeat 5px center;padding-left: 35px">SẢN PHẨM</a></li>
+        <li><a href="#" style="background: url(/images/body_bkg/contactIcon.gif) no-repeat 10px center;padding-left: 40px">LIÊN HỆ</a></li>
       </ul>
     </td>
   </tr>
@@ -48,8 +52,8 @@
   </tr>
   <tr>
     <td style="background: url(/images/body_bkg/footer-left.gif) repeat-x scroll top center;height: 100px;" align="center">
-     Copyright © 2010 Chăn - Ra - Gối - Nệm. Công ty TNHH Trang trí nội thất HOÀN MỸ<br />
-     329 Lê Văn Lương, P. Tân Quy, Q.7, TP. Hồ Chí Minh. Tel: (083) 771.5090 - DĐ: 0918.803.986 - 0903.301.595<br />
+     Copyright © 2010 Chăn - Ra - Gối - Nệm. Công ty TNHH Trang trí nội thất <b style="color:blue">Tên Công Ty</b><br />
+     329 Lê Văn Lương, P. Tân Quy, Q.7, TP. Hồ Chí Minh. Tel: <b style="color:red">(083) 771.5090</b> - DĐ: <b style="color:red">0918.803.986</b> - <b style="color:red">0903.301.595</b><br />
     </td>
   </tr>
 </table>

@@ -7,6 +7,8 @@ $product = MySQLSELECT($query);
 $query = "SELECT * FROM categories WHERE deleted='0'";
 $cat_list = MySQLSELECT($query);
 
+$smarty = new SmartyEx;
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $product_id   = $_POST['product_id'];
   // if($_POST['submit'] == 'Sua')
@@ -43,12 +45,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       ));
     }
   }
-
+  $smarty->assign("update_ok", '1');
   //header('Location: refresh.php?p=categories');
   //exit;
 }
-
-$smarty = new SmartyEx;
 
 $smarty->assign("product",$product[0]);
 $smarty->assign("cat_list",$cat_list);

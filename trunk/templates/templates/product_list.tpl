@@ -1,4 +1,6 @@
 <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-bottom: 1px solid #cccccc;border-right: 1px solid #cccccc">
+<tr><td colspan="2" style="background: url(/images/body_bkg/rokmininews-header.png) repeat-x center center;padding: 8px 10px;border-top:1px solid #cccccc;border-left:1px solid #cccccc;text-transform: uppercase;font-weight: bold;color: green;font-family: tohoma;font-size: 20px">{$select_cat_obj.category_name}</td></tr>
+{if $product_count > 0}
 {foreach from=$rows item=row}
   <tr>
   {foreach from=$row item=product key=key}
@@ -20,4 +22,9 @@
   {/foreach}
   </tr>
 {/foreach}
+{else}
+<tr>
+  <td align="center" style="padding: 100px 0px;border-left:1px solid #cccccc;font-weight: bold;font-size: 20px">KHÔNG CÓ SẢN PHẨM NÀO</td>
+</tr>
+{/if}
 </table>
