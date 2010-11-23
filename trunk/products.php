@@ -10,5 +10,4 @@ $rows = array_chunk($product_list, 2);
 $smarty->assign("rows", $rows);
 $smarty->assign("product_count", count($product_list));
 $product_list = $smarty->fetch('product_list.tpl');
-
 ?>
