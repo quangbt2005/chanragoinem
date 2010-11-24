@@ -27,7 +27,8 @@
 
 <script language="JavaScript" type="text/javascript">
 {if $update_category_ok == '1'}
-window.parent.document.getElementById('iframe1').contentWindow.location.reload(true);
+// window.parent.document.getElementById('iframe1').contentWindow.location.reload(true);
+window.parent.document.getElementById('iframe1').src = '/quanly/categories.php?cat_id='+{$cat_id};
 alert('Thay đổi thông tin danh mục thành công');
 {/if}
 {literal}
