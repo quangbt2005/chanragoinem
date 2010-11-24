@@ -14,12 +14,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     'created_date'    => date('Y-m-d H:i:s'),
   ));
 
-  header('Location: refresh.php');
+  $_SESSION['flash']['add_category_ok'] = '1';
+  header('Location: /quanly/category_add.php');
   exit;
 }
 
 // $smarty = new SmartyEx;
-
+if(isset($_SESSION['flash']['add_category_ok'])){
+	$smarty->assign('add_category_ok', '1');
+  unset($_SESSION['flash']['add_category_ok']);
+}
 $smarty->assign("cat_list",$cat_list);
 $smarty->display('admin/category_add.tpl');
 ?>

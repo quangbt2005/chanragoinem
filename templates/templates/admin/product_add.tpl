@@ -23,5 +23,11 @@
     <tr><th colspan="2"><input type="submit" value="Thêm sản phẩm"></th></tr>
   </table>
   </form>
+  {if $add_product_ok=='1'}
+  <script type="text/javascript" language="javascript">
+  window.parent.document.getElementById('iframe3').contentWindow.location.reload(true);
+  alert('Thêm sản phẩm thành công');
+  </script>
+  {/if}
 </body>
 </html>

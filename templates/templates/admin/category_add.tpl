@@ -23,5 +23,11 @@
     <tr><th colspan="2"><input type="submit" value="Thêm"></th></tr>
   </table>
   </form>
+  {if $add_category_ok=='1'}
+  <script type="text/javascript" language="javascript">
+  window.parent.document.getElementById('iframe1').contentWindow.location.reload(true);
+  alert('Đã thêm danh mục thành công');
+  </script>
+  {/if}
 </body>
 </html>

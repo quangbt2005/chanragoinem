@@ -1,7 +1,7 @@
 <?php
 require_once 'init.php';
 
-$product_list = List_Product_By_Category(1,0,100);
+$product_list = List_All_Product(0,100);
 // pd($Product_List);
 // $smarty = new SmartyEx;
 

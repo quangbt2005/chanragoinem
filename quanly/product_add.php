@@ -26,10 +26,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     'created_date'        => date('Y-m-d H:i:s'),
   ));
 
-  header('Location: refresh.php?p=categories');
+
+  $_SESSION['flash']['add_product_ok'] = '1';
+  header('Location: /quanly/product_add.php');
   exit;
 }
 
+if(isset($_SESSION['flash']['add_product_ok'])){
+  $smarty->assign('add_product_ok', '1');
+  unset($_SESSION['flash']['add_product_ok']);
+}
 // $smarty = new SmartyEx;
 $smarty->assign("cat_list",$cat_list);
 $smarty->display('admin/product_add.tpl');

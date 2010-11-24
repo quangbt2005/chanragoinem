@@ -136,6 +136,13 @@ function List_Product_By_Category( $category_id, $offset=0,
   return MySQLSELECT($query);
 }
 // ---------------------------------------------------------------------------------------------- //
+function List_All_Product( $offset=0, $limit=DEFAULT_PAGER_LIMIT )
+{
+  $query  = 'SELECT * FROM products WHERE ';
+  $query .= "deleted='0' ORDER BY created_date DESC LIMIT $offset,$limit";
+  return MySQLSELECT($query);
+}
+// ---------------------------------------------------------------------------------------------- //
 function Load_Fist_Category()
 {
   $query  = "SELECT id FROM categories WHERE deleted='0' LIMIT 1";
