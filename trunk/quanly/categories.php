@@ -1,5 +1,5 @@
 <?php
-require '../init.php';
+require_once '../init.php';
 $query    = "SELECT * FROM categories WHERE deleted='0' ORDER BY created_date";
 $cat_list = MySQLSELECT($query);
 
@@ -131,7 +131,7 @@ foreach($cat_obj_array as $cat_obj){
 
 $_SESSION['category_path'] = $category_path;
 
-$smarty = new SmartyEx;
+// $smarty = new SmartyEx;
 
 $smarty->assign("cat_list",$tmp_tree);
 $smarty->display('admin/categories.tpl');

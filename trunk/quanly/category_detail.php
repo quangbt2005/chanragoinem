@@ -1,5 +1,5 @@
 <?php
-require '../init.php';
+require_once '../init.php';
 $cat_id = $_GET['cat_id'];
 $query = "SELECT * FROM categories WHERE deleted='0' AND id=" . MySQLQuote($cat_id);
 $cat = MySQLSELECT($query);
@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   exit;
 }
 
-$smarty = new SmartyEx;
+// $smarty = new SmartyEx;
 
 $smarty->assign("cat",$cat[0]);
 $smarty->assign("cat_list",$cat_list);

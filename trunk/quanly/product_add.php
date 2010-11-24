@@ -1,5 +1,5 @@
 <?php
-require '../init.php';
+require_once '../init.php';
 $query = "SELECT * FROM categories WHERE deleted='0'";
 $cat_list = MySQLSELECT($query);
 
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   exit;
 }
 
-$smarty = new SmartyEx;
+// $smarty = new SmartyEx;
 $smarty->assign("cat_list",$cat_list);
 $smarty->display('admin/product_add.tpl');
 ?>

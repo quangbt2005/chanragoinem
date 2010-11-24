@@ -11,15 +11,23 @@
     {foreach from=$cat_list item=cat}
     <tr><th align="left" style="padding: 5px 0px 5px {math equation="5+x*y" x=10 y=$cat.level}px;"><a href="javascript:change_category_detail({$cat.id});" onclick="">{$cat.category_name}</a></th></tr>
     {/foreach}
+    <tr><th align="left"><a href="javascript:goToCompanyInfo();" onclick="">Thay đổi thông tin công ty</a></th></tr>
   </table>
 </body>
 {literal}
 <script languge="javascript">
+function goToCompanyInfo()
+{
+  window.parent.document.getElementById('table2').style.display = 'block';
+  window.parent.document.getElementById('table1').style.display = 'none';
+}
 function change_category_detail(category_id){
+  window.parent.document.getElementById('table1').style.display = 'block';
+  window.parent.document.getElementById('table2').style.display = 'none';
+
   window.parent.document.getElementById('iframe1').src='/quanly/categories.php?cat_id=' + category_id;
   window.parent.document.getElementById('iframe2').src='/quanly/category_detail.php?cat_id=' + category_id;
   window.parent.document.getElementById('iframe3').src='/quanly/products.php?cat_id=' + category_id;
-  window.parent.document.getElementById('iframe1').src='/quanly/categories.php?f=f&cat_id=' + category_id;
 }
 </script>{/literal}
 </html>
