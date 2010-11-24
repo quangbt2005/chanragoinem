@@ -5,9 +5,18 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex" />
   <link rel="StyleSheet" href="/styles/front.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/jquery.lightbox-0.5.css" media="screen" />
   <script type="text/javascript" src="/javascripts/jquery-1.4.2.js"></script>
+  <script type="text/javascript" src="/javascripts/jquery.lightbox-0.5.js"></script>
   <link rel="shortcut icon" href="/favico.ico" type="image/x-icon" />
   <title>CHAN RA GOI NEM</title>
+  <script type="text/javascript" language="javascript">
+  {literal}
+  $(document).ready(function(){
+    $('a.gallery').lightBox();
+  });
+  {/literal}
+  </script>
 </head>
 <body>
 <table id="bigtable" cellpadding="0" cellspacing="0" border="0">
