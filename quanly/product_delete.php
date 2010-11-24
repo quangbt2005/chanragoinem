@@ -1,5 +1,5 @@
 <?php
-require '../init.php';
+require_once '../init.php';
 
 $product_id = $_GET['product_id'];
 if(!empty($product_id)){

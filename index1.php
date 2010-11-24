@@ -1,7 +1,7 @@
 <?php
 require_once 'init.php';
 
-$smarty = new SmartyEx;
+// $smarty = new SmartyEx;
 
 $cat_id = empty($_GET['cat_id']) ? Load_Fist_Category() : $_GET['cat_id'];
 if(!empty($cat_id)){

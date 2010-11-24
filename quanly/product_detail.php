@@ -1,5 +1,5 @@
 <?php
-require '../init.php';
+require_once '../init.php';
 $product_id = $_GET['product_id'];
 $query = "SELECT * FROM products WHERE deleted='0' AND id=" . MySQLQuote($product_id);
 $product = MySQLSELECT($query);
@@ -7,7 +7,7 @@ $product = MySQLSELECT($query);
 $query = "SELECT * FROM categories WHERE deleted='0'";
 $cat_list = MySQLSELECT($query);
 
-$smarty = new SmartyEx;
+// $smarty = new SmartyEx;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $product_id   = $_POST['product_id'];

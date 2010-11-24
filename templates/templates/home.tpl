@@ -87,8 +87,8 @@
   </tr>
   <tr>
     <td style="background: url(/images/body_bkg/footer-left.gif) repeat-x scroll top center;height: 100px;" align="center">
-    Copyright © 2010 Chăn - Ra - Gối - Nệm. Công ty TNHH Trang trí nội thất <b style="color:blue">Tên Công Ty</b><br />
-    329 Lê Văn Lương, P. Tân Quy, Q.7, TP. Hồ Chí Minh. Tel: <b style="color:red">(083) 771.5090</b> - DĐ: <b style="color:red">0918.803.986</b> - <b style="color:red">0903.301.595</b><br />
+    Copyright © 2010 Chăn - Ra - Gối - Nệm. Công ty TNHH Trang trí nội thất <b style="color:blue">{$company_name}</b><br />
+    {$company_address}. Tel: <b style="color:red">{$company_bottom_fone1}</b> - DĐ: <b style="color:red">{$company_bottom_fone2}</b> - <b style="color:red">{$company_bottom_fone3}</b><br />
     </td>
   </tr>
 </table>

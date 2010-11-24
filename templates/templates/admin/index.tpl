@@ -12,8 +12,8 @@
 <table cellpadding="0" cellspacing="0" width="100%" id="bigtable" border="0" style="width:1024px;margin: auto;border: 1px solid #cccccc">
   <tr>
     <td valign="top" width="200" style="border-right: 1px solid #cccccc"><iframe name="iframe1" id='iframe1' src="/quanly/categories.php" frameborder="0"></iframe></td>
-    <td>
-      <table cellpadding="0" cellspacing="3" width="100%" border="0">
+    <td valign="top">
+      <table cellpadding="0" cellspacing="3" width="100%" border="0" id="table1">
         <tr><td colspan="2" style="border-bottom: 1px solid #cccccc"><iframe name="iframe2" id='iframe2' src="/quanly/category_detail.php?cat_id=1" frameborder="0"></iframe></td></tr>
         <tr><td colspan="2" style="border-bottom: 1px solid #cccccc"><iframe name="iframe3" id='iframe3' src="" frameborder="0"></iframe></td></tr>
         <tr>
@@ -23,7 +23,14 @@
         </tr>
         <tr><td colspan="2">
           <iframe name="iframe4" id='iframe4' src="" frameborder="0" width="100%"></iframe>
-         </td></tr>
+        </td></tr>
+      </table>
+      <table cellpadding="0" cellspacing="3" width="100%" border="0" id="table2" style="display:none">
+        <tr>
+          <td style="border-bottom: 1px solid #cccccc">
+            <iframe name="iframe5" id='iframe5' src="/quanly/edit_company_info.php" frameborder="0"></iframe>
+          </td>
+        </tr>
       </table>
     </td>
   </tr>

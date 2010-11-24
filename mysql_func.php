@@ -92,8 +92,10 @@ function MySQLUPDATE($table, $conditions, $values)
   }
 
   $query  = 'UPDATE ' . $table . ' SET ' . implode(',', $query_values);
-  $query .= ' WHERE ' . implode(' AND ', $query_conditions);
-
+  if(!empty($conditions)){
+    $query .= ' WHERE ' . implode(' AND ', $query_conditions);
+  }
+  // pd($query);
   MySQLExec($query);
 }
 // ---------------------------------------------------------------------------------------------- //
