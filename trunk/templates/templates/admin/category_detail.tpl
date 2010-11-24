@@ -24,13 +24,17 @@
   </table><input type="hidden" value="{$cat.id}" name="cat_id">
   </form>
 </body>
-{literal}
+
 <script language="JavaScript" type="text/javascript">
+{if $update_category_ok == '1'}
+window.parent.document.getElementById('iframe1').contentWindow.location.reload(true);
+alert('Thay đổi thông tin danh mục thành công');
+{/if}
+{literal}
 function goto_category_add()
 {
   window.parent.document.getElementById('iframe2').src='/quanly/category_add.php';
 }
-</script>
-
 {/literal}
+</script>
 </html>
