@@ -25,12 +25,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     ));
   }
 
-  header('Location: refresh.php?p=categories');
+  $_SESSION['flash']['update_category_ok'] = '1';
+  header('Location: /quanly/category_detail.php?cat_id=' . $cat_id);
   exit;
 }
 
 // $smarty = new SmartyEx;
-
+if(isset($_SESSION['flash']['update_category_ok'])){
+	$smarty->assign('update_category_ok', '1');
+  unset($_SESSION['flash']['update_category_ok']);
+}
 $smarty->assign("cat",$cat[0]);
 $smarty->assign("cat_list",$cat_list);
 $smarty->display('admin/category_detail.tpl');
