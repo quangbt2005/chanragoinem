@@ -45,11 +45,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       ));
     }
   }
-  $smarty->assign("update_ok", '1');
-  //header('Location: refresh.php?p=categories');
-  //exit;
+  $_SESSION['flash']['update_product_ok'] = '1';
+  header('Location: /quanly/product_detail.php?product_id=' . $product_id);
+  exit;
 }
-
+if(isset($_SESSION['flash']['update_product_ok'])){
+	$smarty->assign('update_ok', '1');
+  unset($_SESSION['flash']['update_product_ok']);
+}
 $smarty->assign("product",$product[0]);
 $smarty->assign("cat_list",$cat_list);
 $smarty->display('admin/product_detail.tpl');

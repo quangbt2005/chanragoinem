@@ -27,7 +27,7 @@
   {if $update_ok=='1'}
   <script type="text/javascript" language="javascript">
   window.parent.document.getElementById('iframe3').contentWindow.location.reload(true);
-  window.parent.document.getElementById('iframe4').src = window.parent.document.getElementById('iframe4').src;
+  alert('Thay đổi thông tin sản phẩm thành công');
   </script>
   {/if}
 </body>
