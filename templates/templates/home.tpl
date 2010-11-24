@@ -42,7 +42,7 @@
     <td>
       <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background: url(/images/body_bkg/header-bg.png) repeat-x scroll 0 0 #EDEDED;border: 1px solid #dddddd">
         <tr>
-          <td style="padding-left: 150px;font-family: ariston,tahoma,verdana;font-weight: bold;font-size: 40px;color: blue;">TEN CONG TY</td>
+          <td style="padding-left: 150px;font-family: ariston,arabia,bandit,tahoma,verdana;font-weight: bold;font-size: 40px;color: blue;">{$company_name2}</td>
           <td align="right" style="padding-right: 50px;"><img src="/images/body_bkg/logo_copy.jpg"></td>
         </tr>
       </table>
@@ -56,7 +56,7 @@
       <ul id="headermenu" style="padding:0px;font-weight: bold;margin: 0px">
         <li><a href="#" style="background: url(/images/body_bkg/HomeIcon.gif) no-repeat 10px center;padding-left: 40px"><span style="color: red">TRANG CHỦ</span></a></li>
         <li><a href="/index1.php" style="background: url(/images/body_bkg/girl.png) no-repeat 5px center;padding-left: 35px">SẢN PHẨM</a></li>
-        <li><a href="#" style="background: url(/images/body_bkg/contactIcon.gif) no-repeat 10px center;padding-left: 40px">LIÊN HỆ</a></li>
+        <li><a href="/index2.php" style="background: url(/images/body_bkg/contactIcon.gif) no-repeat 10px center;padding-left: 40px">LIÊN HỆ</a></li>
       </ul>
     </td>
   </tr>
@@ -87,7 +87,7 @@
   </tr>
   <tr>
     <td style="background: url(/images/body_bkg/footer-left.gif) repeat-x scroll top center;height: 100px;" align="center">
-    Copyright © 2010 Chăn - Ra - Gối - Nệm. Công ty TNHH Trang trí nội thất <b style="color:blue">{$company_name}</b><br />
+    Copyright © 2010 Chăn - Ra - Gối - Nệm. {$company_name1} <b style="color:blue">{$company_name2}</b><br />
     {$company_address}. Tel: <b style="color:red">{$company_bottom_fone1}</b> - DĐ: <b style="color:red">{$company_bottom_fone2}</b> - <b style="color:red">{$company_bottom_fone3}</b><br />
     </td>
   </tr>

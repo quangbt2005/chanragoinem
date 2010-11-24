@@ -11,9 +11,15 @@
   <span style="font-size: 20px;color: blue;"><b>Quản lý thông tin công ty</b></span><br />&nbsp;
   <table cellpadding="0" cellspacing="0" width="95%" class="input_table">
     <tr>
-      <th align="right" style="padding: 10px;" width="120">Tên Công Ty</th>
+      <th align="right" style="padding: 10px;" width="120">Tên Công Ty (Phần 1)</th>
       <td align="left" style="padding: 10px;">
-        <input type="text" value="{$company_name}" name="company_name" style="width: 340px">
+        <input type="text" value="{$company_name1}" name="company_name1" style="width: 340px">
+      </td>
+    </tr>
+    <tr>
+      <th align="right" style="padding: 10px;" width="120">Tên Công Ty (Phần 2)</th>
+      <td align="left" style="padding: 10px;">
+        <input type="text" value="{$company_name2}" name="company_name2" style="width: 340px">
       </td>
     </tr>
     <tr>
