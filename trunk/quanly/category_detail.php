@@ -19,7 +19,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       'updated_date'    => date('Y-m-d H:i:s'),
     ));
   } elseif($_POST['submit'] == 'Xóa danh mục này'){
-    MySQLUPDATE('categories',array('id' => $cat_id),array(
+    $subcat = FindSubCategories($cat_id);
+    MySQLUPDATE('categories',array('id' => $subcat),array(
       'deleted'         => "1",
       'updated_date'    => date('Y-m-d H:i:s'),
     ));
