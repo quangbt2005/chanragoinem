@@ -27,6 +27,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         unlink($tmp_upload);
       }
 
+      unlink(SYS_IMAGES_PATH . $product['product_image']);
+
       MySQLUPDATE('products',array('id' => $product_id),array(
         'product_category'    => $product_category,
         'product_price'       => MySQLQuote($product_price),
@@ -36,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         'updated_date'        => date('Y-m-d H:i:s'),
       ));
     } else {
-    	MySQLUPDATE('products',array('id' => $product_id),array(
+      MySQLUPDATE('products',array('id' => $product_id),array(
         'product_category'    => $product_category,
         'product_price'       => MySQLQuote($product_price),
         'product_name'        => MySQLQuote($product_name),
@@ -50,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   exit;
 }
 if(isset($_SESSION['flash']['update_product_ok'])){
-	$smarty->assign('update_ok', '1');
+  $smarty->assign('update_ok', '1');
   unset($_SESSION['flash']['update_product_ok']);
 }
 $smarty->assign("product",$product[0]);

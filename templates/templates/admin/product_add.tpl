@@ -7,10 +7,10 @@
   <link rel="StyleSheet" href="/styles/admin.css" type="text/css" />
 </head>
 <body>
-  <form method="post" enctype="multipart/form-data">
+  <form method="post" enctype="multipart/form-data" onsubmit="return checkinput();">
   <table cellpadding="0" cellspacing="0" width="95%" class="input_table" style="margin-top: 10px;">
-    <tr><th align="right">Tên Sản Phẩm</th><td><input type="text" name="product_name" style="width: 280px"></td></tr>
-    <tr><th align="right">Danh Mục</th><td><select name="product_category" style="width: 180px">
+    <tr><th align="right">Tên Sản Phẩm</th><td><input type="text" id="product_name" name="product_name" style="width: 280px"></td></tr>
+    <tr><th align="right">Danh Mục</th><td><select id="product_category" name="product_category" style="width: 180px">
           <option value="">---------------</option>
           {foreach from=$cat_list item=pcat}
           <option value="{$pcat.id}">{$pcat.category_name}</option>
@@ -23,11 +23,33 @@
     <tr><th colspan="2"><input type="submit" value="Thêm sản phẩm"></th></tr>
   </table>
   </form>
-  {if $add_product_ok=='1'}
   <script type="text/javascript" language="javascript">
+  {if $add_product_ok=='1'}
   window.parent.document.getElementById('iframe3').contentWindow.location.reload(true);
   alert('Thêm sản phẩm thành công');
-  </script>
   {/if}
+  {literal}
+  function checkinput(){
+    var pcat = document.getElementById('product_category');
+    var pname = document.getElementById('product_name');
+    var errmsg = '';
+
+    if(pname!=null && pname.value == ''){
+      errmsg += 'Chưa nhập tên sản phẩm !';
+    }
+    if(pcat!=null && pcat.selectedIndex == 0){
+      if(errmsg != '') errmsg += "\n";
+      errmsg += 'Chưa chọn danh mục sản phẩm !';
+    }
+    if(errmsg != ''){
+      alert(errmsg);
+      return false;
+    }
+
+    return true;
+  }
+  {/literal}
+  </script>
+
 </body>
 </html>
