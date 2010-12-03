@@ -21,7 +21,7 @@ while($level_processed_count < count($cat_obj_array)){
   $level_processed_count = 0;
   for($i=0;$i<count($cat_obj_array);$i++){
     $tmp = $cat_obj_array[$id_array[$i]];
-    if(!empty($tmp->parent_id) && $tmp->is_level_processed == 0){
+    if(!empty($tmp) && !empty($tmp->parent_id) && $tmp->is_level_processed == 0){
       if(!empty($cat_obj_array[$tmp->parent_id])){
         $parent = $cat_obj_array[$tmp->parent_id];
         if($parent->is_level_processed==1){

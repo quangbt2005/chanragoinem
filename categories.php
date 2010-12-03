@@ -21,15 +21,20 @@ while($level_processed_count < count($cat_obj_array)){
   for($i=0;$i<count($cat_obj_array);$i++){
     $tmp = $cat_obj_array[$id_array[$i]];
     if(!empty($tmp->parent_id) && $tmp->is_level_processed == 0){
-      $parent = $cat_obj_array[$tmp->parent_id];
-      if($parent->is_level_processed==1){
+      if(!empty($cat_obj_array[$tmp->parent_id])){
+        $parent = $cat_obj_array[$tmp->parent_id];
+        if($parent->is_level_processed==1){
 
-        $tmp->level = $parent->level + 1;
-        $tmp->is_level_processed = 1;
-        $level_processed_count++;
+          $tmp->level = $parent->level + 1;
+          $tmp->is_level_processed = 1;
+          $level_processed_count++;
 
-        $tmp->parent_obj = $parent;
-        $parent->addChild($tmp);
+          $tmp->parent_obj = $parent;
+          $parent->addChild($tmp);
+        }
+      } else {
+        unset($cat_obj_array[$id_array[$i]]);
+        unset($id_array[$i]);
       }
     } else {
       $level_processed_count++;

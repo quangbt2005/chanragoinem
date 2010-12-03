@@ -14,6 +14,7 @@ table#bigtable {
       font-family: helvetica, arial, sans-serif;
       font-size: 10pt;
       line-height: 16pt;
+      width: 1024px;
       /*-moz-box-shadow: #000 4px 4px 10px;
       -webkit-box-shadow: #000 4px 4px 10px;*/
 }
@@ -28,3 +29,11 @@ ul#headermenu li a{padding: 10px 20px;text-decoration: none;color: yellow;border
 ul#headermenu li a:hover{color: red}
 table .l-menu-link td a{color: blue;}
 table .l-menu-link td a:hover{color: yellow;}
+#coname{
+	padding-left: 100px;
+	font-family: ariston,arabia,bandit,tahoma,verdana;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 25pt;
+	color: red;
+}

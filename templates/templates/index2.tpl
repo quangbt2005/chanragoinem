@@ -11,22 +11,7 @@
 </head>
 <body>
 <table id="bigtable" cellpadding="0" cellspacing="0" border="0">
-  <tr><td><table cellpadding="0" cellspacing="0" border="0" width="100%" style="background: url(/images/body_bkg/header-bg.png) repeat-x scroll 0 0 #EDEDED;border: 1px solid #dddddd"><tr>
-    <td style="padding-left: 150px;font-family: ariston,tahoma,verdana;font-weight: bold;font-size: 40px;color: blue;">{$company_name2}</td>
-    <td align="right" style="padding-right: 50px;"><img src="/images/body_bkg/logo_copy.jpg"></td></tr></table>
-  </tr>
-  <tr>
-    <td><embed width="100%" height="200" flashvars="dataXml=http://www.chanragoinem.com/modules/mod_jsn_imageshow_pro/jsn_imageshow_pro/xmldata58.xml&amp;imageshowUrl=http://www.chanragoinem.com/modules/mod_jsn_imageshow_pro/jsn_imageshow_pro/imageshow.swf&amp;slideTiming=6&amp;repeatCount=0&amp;processOrder=forward&amp;shadowImageUrl=&amp;captionText=&amp;captionFont=Arial&amp;captionSize=12&amp;captionColor=0xFFFFFF&amp;captionAlignment=left&amp;captionPosition=bottom&amp;captionPadding=6,10&amp;captionBgOpacity=50&amp;captionBgColor=0x000000&amp;showProgress=0&amp;overlayEffectName=magic_field&amp;overlayImageUrl=&amp;overlayImageOpacity=75&amp;overlayImageX=100&amp;overlayImageY=100&amp;motionTiming=3&amp;motionEase=Sine&amp;moveRange=0&amp;scaleRange=0&amp;rotationRange=0&amp;transitionType=fade&amp;transitionTiming=2&amp;transitionEase=Sine&amp;enableLink=1&amp;linkUrl=&amp;linkOpen=_blank" wmode="opaque" quality="high" bgcolor="ffffff" name="imageshow" id="imageshow" style="" src="http://www.chanragoinem.com/modules/mod_jsn_imageshow_pro/jsn_imageshow_pro/loader.swf" type="application/x-shockwave-flash"></td>
-  </tr>
-  <tr>
-    <td style="background: url(/images/body_bkg/header_bg.gif) repeat-x center center;height: 42px;">
-      <ul id="headermenu" style="padding:0px;font-weight: bold;margin: 0px">
-        <li><a href="/" style="background: url(/images/body_bkg/HomeIcon.gif) no-repeat 10px center;padding-left: 40px">TRANG CHỦ</a></li>
-        <li><a href="/index1.php" style="background: url(/images/body_bkg/girl.png) no-repeat 5px center;padding-left: 35px">SẢN PHẨM</a></li>
-        <li><a href="#" style="background: url(/images/body_bkg/contactIcon.gif) no-repeat 10px center;padding-left: 40px"><span style="color: red">LIÊN HỆ</span></a></li>
-      </ul>
-    </td>
-  </tr>
+  {include file="header.tpl"}
   <tr><td><table cellpadding="0" cellspacing="2" width="100%" border="0">
     <tr>
       <td width="192px" valign="top" style="background-color: rgb(100,100,100);">
@@ -63,10 +48,7 @@
     </tr></table></td>
   </tr>
   <tr>
-    <td style="background: url(/images/body_bkg/footer-left.gif) repeat-x scroll top center;height: 100px;" align="center">
-    Copyright © 2010 Chăn - Ra - Gối - Nệm. {$company_name1} <b style="color:blue">{$company_name2}</b><br />
-    {$company_address}. Tel: <b style="color:red">{$company_bottom_fone1}</b> - DĐ: <b style="color:red">{$company_bottom_fone2}</b> - <b style="color:red">{$company_bottom_fone3}</b><br />
-    </td>
+    {include file="footer.tpl"}
   </tr>
 </table>
 </body>

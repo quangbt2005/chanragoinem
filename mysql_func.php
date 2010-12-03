@@ -88,7 +88,14 @@ function MySQLUPDATE($table, $conditions, $values)
   }
   foreach($conditions as $key=>$value)
   {
-    $query_conditions[] = $key . "='" . MySQLQuote($value) . "'";
+    $value = MySQLQuote($value);
+    if(is_array($value))
+    {
+    	$in_st = implode(',', $value);
+      $query_conditions[] = $key . " IN(" . $in_st . ")";
+    } else {
+      $query_conditions[] = $key . "='" . $value . "'";
+    }
   }
 
   $query  = 'UPDATE ' . $table . ' SET ' . implode(',', $query_values);
