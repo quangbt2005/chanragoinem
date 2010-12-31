@@ -35,6 +35,8 @@ function MySQLExec($query){
           }
         }
       }
+    } else {
+    	die("DB HOST WASN'T DEFINED");
     }
   }
 }
